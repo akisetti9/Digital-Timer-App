@@ -111,20 +111,23 @@ class DigitalTimer extends Component {
 
     return (
       <div className="timer-controller-container">
-        <button
-          className="timer-controller-btn"
-          onClick={this.onStartOrPauseTimer}
-          type="button"
-        >
-          <img
-            alt={startOrPauseAltText}
-            className="timer-controller-icon"
-            src={startOrPauseImageUrl}
-          />
-        </button>
-        <p className="timer-controller-label pause">
-          {isTimerRunning ? 'Pause' : 'Start'}
-        </p>
+        <div className="pause">
+          <button
+            className="timer-controller-btn"
+            onClick={this.onStartOrPauseTimer}
+            type="button"
+          >
+            <img
+              alt={startOrPauseAltText}
+              className="timer-controller-icon"
+              src={startOrPauseImageUrl}
+            />
+            <p className="timer-controller-label">
+              {isTimerRunning ? 'Pause' : 'Start'}
+            </p>
+          </button>
+        </div>
+
         <button
           className="timer-controller-btn"
           onClick={this.onResetTimer}
@@ -135,8 +138,8 @@ class DigitalTimer extends Component {
             className="timer-controller-icon"
             src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
           />
+          <p className="timer-controller-label">Reset</p>
         </button>
-        <p className="timer-controller-label">Reset</p>
       </div>
     )
   }
